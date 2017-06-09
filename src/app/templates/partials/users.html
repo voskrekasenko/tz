@@ -1,0 +1,21 @@
+<table class="table">
+	<label for="limit">Лимит юзеров</label>
+	<br/>
+	<input type="number" name="limit" ng-model="vm.limitUsers">
+	<br/>
+	<br/>
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>age</th>
+			<th>gender</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in vm.users | limitTo:vm.limitUsers">
+			<td>{{user.name}}</td>
+			<td>{{user.age}}</td>
+			<td>{{user.gender}}</td>
+		</tr>
+	</tbody>
+</table>

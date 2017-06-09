@@ -1,0 +1,14 @@
+<header id="header">
+	<a ui-sref="dashboard" class="link">logo</a>
+	<a ng-show="!vm.getToken()" ui-sref="login" class="link">login</a>
+	<a ng-show="vm.getToken()" ng-click="vm.logout()" class="link">logout</a>
+</header>
+<form class="auth-form">
+	<div class="auth-field">
+		<label for="login">login</label>
+		<input ng-model="vm.username" name="login" type="text">
+		<label for="pass">password</label>
+		<input ng-model="vm.password" name="pass" type="password">
+		<button ng-click="vm.formSubmit(vm.username, vm.password)" class="btn-ok" type="button">ok</button>
+	</div>
+</form>

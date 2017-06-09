@@ -1,0 +1,19 @@
+<table class="table">
+	Сортировать по:
+	<select name="sort" ng-model="sortColumn">
+		<option value="name">Name</option>
+		<option value="role">Role</option>
+	</select>
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>role</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="role in vm.roles | orderBy:sortColumn">
+			<td>{{role.name}}</td>
+			<td>{{role.role}}</td>
+		</tr>
+	</tbody>
+</table>

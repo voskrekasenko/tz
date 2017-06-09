@@ -1,0 +1,16 @@
+<header id="header">
+		<a ui-sref="dashboard" class="link">logo</a>
+		<a ng-show="!vm.getToken()" ui-sref="login" class="link">login</a>
+		<a ng-show="vm.getToken()" ng-click="vm.logout()" class="link">logout</a>
+	</header>
+<section ng-if="vm.getToken()" class="dash">
+	<div class="sidebar-left">
+		<ul class="list">
+			<li><a ng-click="vm.getUsers()" ui-sref=".users" ui-sref-active="active">пользователи</a></li>
+			<li><a ng-click="vm.getRoles()" ui-sref=".roles">роли</a></li>
+		</ul>
+	</div>
+	<div class="view-rigth">
+		<div ui-view></div>
+	</div>
+</section>
